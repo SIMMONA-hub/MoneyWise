@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoneyWise</title>
+  <link rel="stylesheet" href="stylefinal.css"/>
+</head>
+<body>
+
+   <!-- Login Page -->
+    <div class="auth-pages" id="auth-container">
+        <!-- Login Page -->
+        <div class="auth-page" id="login-page">
+            <div class="logo-container">
+                <img src="MoneyWise.png" alt="MoneyWise" class="logo">
+                <div class="tagline">financial education</div>
+            </div>
+            <div class="auth-content">
+                <div class="character-container">
+                    <img src="boy.png" alt="Character" class="auth-character">
+                </div>
+                <div class="auth-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="login-email" placeholder="Phone number or email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="login-password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <button class="auth-btn" onclick="loginUser()">Login</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="#" class="auth-link" onclick="showForgotPasswordPage()">Forgot password</a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <span class="auth-text">Don't you have an account? </span>
+                        <a href="#" class="auth-link" onclick="showRegisterPage()">Sign in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forgot Password Page -->
+        <div class="auth-page" id="forgot-password-page">
+            <div class="logo-container">
+                <img src="MoneyWise.png" alt="MoneyWise" class="logo">
+                <div class="tagline">financial education</div>
+            </div>
+            <div class="auth-content">
+                <div class="character-container">
+                    <img src="boy.png" alt="Character" class="auth-character">
+                </div>
+                <div class="auth-form">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="reset-email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <button class="auth-btn" onclick="sendResetCode()">Reset Password</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="#" class="auth-link" onclick="showLoginPage()">Back to login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div class="auth-page" id="register-page">
+            <div class="logo-container">
+                <img src="MoneyWise.png" alt="MoneyWise" class="logo">
+                <div class="tagline">financial education</div>
+            </div>
+            <div class="auth-content">
+                <div class="character-container">
+                    <img src="boy.png" alt="Character" class="auth-character">
+                </div>
+                <div class="auth-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="first-name" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="last-name" placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="age" placeholder="Your age">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="school" placeholder="School or University">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="new-password" placeholder="New password">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <button class="auth-btn" onclick="registerUser()">Get code</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="#" class="auth-link" onclick="showLoginPage()">Back to login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirm Page -->
+        <div class="auth-page" id="confirm-page">
+            <div class="logo-container">
+                <img src="MoneyWise.png" alt="MoneyWise" class="logo">
+                <div class="tagline">financial education</div>
+            </div>
+            <div class="auth-content">
+                <div class="character-container">
+                    <img src="boy.png" alt="Character" class="auth-character">
+                </div>
+                <div class="auth-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="verification-code" placeholder="Code">
+                    </div>
+                    <div class="form-group">
+                        <button class="auth-btn" onclick="confirmCode()">Confirm</button>
+                    </div>
+                    <div class="congratulations" id="congrats-message">CONGRATULATIONS!</div>
+                    <div class="text-center mt-3">
+                        <a href="#" class="auth-link" onclick="showLoginPage()">Back to login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- меню  -->
+   <!-- Main App - Initially Hidden -->
+   <div class="main-container" id="app-container" style="display: none;">
+    <!-- Navigation menu -->
+    <nav class="navigation">
+      <div class="nav-links">
+          <!-- Основные ссылки -->
+          <a href="#" id="home-link">Home</a>
+          <a href="#" id="budget-calculator-link">Budget Calculator</a>
+          <a href="#" id="investor-quiz-link">Investor Quiz</a>
+          <a href="#" id="learning-hub-link">Learning Hub</a>
+          <a href="#" id="stock-calculator-link">Stock Calculator</a>
+          <a href="#" id="goal-tracker-link">Goal Tracker</a>
+          <a href="#" id="about-us-link">About us</a>
+          <a href="#" id="contact-link">Contact</a>
+      </div>
+  
+      <!-- Кнопка аккаунта отдельно -->
+      <div class="account-wrapper">
+          <button class="user-account-btn" onclick="toggleAccountMenu()">
+              <img src="account-icon.png" alt="Account" class="account-icon">
+          </button>
+          <div class="account-dropdown" id="account-dropdown">
+              <a href="#" onclick="logoutUser()">Logout</a>
+              <a href="#" onclick="showRegisterFormFromApp()">Sign in</a>
+          </div>
+      </div>
+  </nav>
+
+  <header id="home-page">
+    <div class="scene">
+      <!-- уй -->
+      <img src="buildings.png" class="building building-left" alt="Buildings Left">
+  
+      <!-- борд -->
+      <img src="billboard.png" class="billboard" alt="MoneyWise Billboard">
+  
+      <!-- уй2 -->
+      <img src="buildings.png" class="building building-right" alt="Buildings Right">
+    </div>
+  </header>
+  
+
+  <!-- BUDGET -->
+  <section class="page-content" id="budget-calculator-page">
+    <div class="budget-container">
+     
+      <div class="tabs">
+        <button data-tab="income" class="tab active">Income</button>
+        <button data-tab="essential" class="tab">Essential Expenses</button>
+        <button data-tab="nonessential" class="tab">Non-Essential Expenses</button>
+        <button data-tab="savings" class="tab">Savings & Investments</button>
+      </div>
+      <div class="tabs-content">
+        <div id="income" class="tab-content">
+          <!-- income inputs -->
+          <div class="input-group"><label for="salary">Salary / Wages</label><input type="number" id="salary"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="freelance">Freelance</label><input type="number" id="freelance"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="passive">Passive Income</label><input type="number" id="passive"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="gifts">Gifts / Bonuses</label><input type="number" id="gifts"/><span class="unit">tg</span></div>
+        </div>
+        <div id="essential" class="tab-content hidden">
+          <!-- essential inputs -->
+          <div class="input-group"><label for="housing">Housing</label><input type="number" id="housing"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="food">Food &amp; Groceries</label><input type="number" id="food"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="transport">Transportation</label><input type="number" id="transport"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="health">Healthcare</label><input type="number" id="health"/><span class="unit">tg</span></div>
+        </div>
+        <div id="nonessential" class="tab-content hidden">
+          <!-- non-essential inputs -->
+          <div class="input-group"><label for="entertainment">Entertainment</label><input type="number" id="entertainment"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="shopping">Shopping</label><input type="number" id="shopping"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="dining">Dining Out</label><input type="number" id="dining"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="travel">Travel &amp; Vacation</label><input type="number" id="travel"/><span class="unit">tg</span></div>
+        </div>
+        <div id="savings" class="tab-content hidden">
+          <!-- savings inputs -->
+          <div class="input-group"><label for="emergency">Emergency Fund</label><input type="number" id="emergency"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="investments">Investments</label><input type="number" id="investments"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="retirement">Retirement</label><input type="number" id="retirement"/><span class="unit">tg</span></div>
+          <div class="input-group"><label for="goal-saving">Goal-Based</label><input type="number" id="goal-saving"/><span class="unit">tg</span></div>
+        </div>
+      </div>
+      <div class="progress-card">
+        <h3>Your progress <small>(monthly)</small></h3>
+        <div class="progress-row"><span>Income</span><span id="p-income">0 tg</span></div>
+        <div class="progress-row"><span>Spending</span><span id="p-spending">0 tg</span></div>
+        <div class="progress-row balance"><span>Balance</span><span id="p-balance">0 tg</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    
+     <!-- Investor Quiz Page -->
+        <div class="page-content" id="investor-quiz-page">
+            <!-- Welcome screen - initially visible -->
+            <div class="content" id="welcome-screen">
+                <h1 class="welcome-title">WELCOME TO INVESTOR QUIZ</h1>
+                <p class="difficulty-text">select difficulty level:</p>
+                
+                <div class="difficulty-options">
+                    <button class="difficulty-btn easy selected" onclick="setDifficulty('easy')">easy</button>
+                    <button class="difficulty-btn medium" onclick="setDifficulty('medium')">medium</button>
+                    <button class="difficulty-btn hard" onclick="setDifficulty('hard')">hard</button>
+                    <button class="difficulty-btn mixed" onclick="setDifficulty('mixed')">mixed</button>
+                </div>
+                
+                <div class="start-btn-container">
+                    <button class="start-btn" id="start-button">
+                        <img src="start.png" alt="START">
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Question container - will be dynamically populated -->
+            <div id="questions-container"></div>
+            
+            <!-- Results screen -->
+            <div class="results-container" id="results-screen" style="display: none;">
+                <div class="results-layout">
+                    <div class="results-content">
+                        <img src="gameover.png" alt="GAME OVER" class="gameover-image">
+                        
+                        <div class="results-details">
+                            <div class="result-title">
+                                <span id="result-emoji">🥉</span>
+                                <span id="result-status">Financial student!</span>
+                            </div>
+                            <div class="result-score">Your score: <span id="result-points">0</span> points</div>
+                            <div class="result-level">Your level of financial literacy:</div>
+                            
+                            <div class="result-progress-wrapper">
+                                <div class="result-progress">
+                                    <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="play-again-btn" onclick="restartQuiz()">PLAY AGAIN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </section>
+
+  <section id="learning-hub-page" class="learning-hub">
+    <div class="learning-hub__inner">
+  
+      
+      <h2 class="learning-hub__title">Learn &amp; Earn</h2>
+  
+      <div class="learning-hub__list">
+  
+        <div class="learning-hub__item">
+          <div class="learning-hub__item-text">
+            "Financial Literacy 101: Everything You Need to Know"
+          </div>
+          <a href="https://youtu.be/4XZIv4__sQA" target="_blank"
+             class="learning-hub__btn">watch</a>
+        </div>
+  
+        <div class="learning-hub__item">
+          <div class="learning-hub__item-text">
+            "Основы финансовой грамотности: Важные понятия и советы"
+          </div>
+          <a href="https://youtu.be/Qk_gxsrrfbU" target="_blank"
+             class="learning-hub__btn">watch</a>
+        </div>
+  
+        <div class="learning-hub__item">
+          <div class="learning-hub__item-text">
+            "Financial Literacy: 5 Tips for Beginners"
+          </div>
+          <a href="https://youtu.be/q5JWp47z4bY" target="_blank"
+             class="learning-hub__btn">watch</a>
+        </div>
+  
+        <div class="learning-hub__item">
+          <div class="learning-hub__item-text">
+            "Финансовая грамотность для начинающих: 5 советов"
+          </div>
+          <a href="https://youtu.be/ThgDxf9tpps" target="_blank"
+             class="learning-hub__btn">watch</a>
+        </div>
+  
+        <div class="learning-hub__item">
+          <div class="learning-hub__item-text">
+            "Investing Basics: Stocks, Bonds, and Mutual Funds Explained"
+          </div>
+          <a href="https://youtu.be/uFbvDltP88I" target="_blank"
+             class="learning-hub__btn">watch</a>
+        </div>
+  
+      </div>
+  
+      <!-- уй3 -->
+      <img src="buildings.png" alt="" class="learning-hub__building">
+  
+    </div>
+  </section>
+  
+
+  <!-- STOCK CALCULATOR -->
+  <section id="stock">
+   
+    <!-- Stock Calculator page -->
+    <div class="page-content" id="stock-calculator-page">
+      <div class="stock-calculator">
+          <div class="character-message-container">
+              <img src="boymessage.png" alt="Message" class="message-image">
+          </div>
+          
+          <div class="calculator-container">
+              <h2 class="calculator-title">Stock Return Calculator</h2>
+              
+              <div class="calculator-field">
+                  <label for="start-capital">Start-up capital</label>
+                  <input type="number" id="start-capital" min="0" oninput="calculateStockReturn()" pattern="[0-9]*" inputmode="decimal">
+              </div>
+              
+              <div class="calculator-field">
+                  <label for="annual-yield">Annual yield (%)</label>
+                  <input type="number" id="annual-yield" min="0" step="0.1" oninput="calculateStockReturn()" pattern="[0-9]*\.[0-9]*" inputmode="decimal">
+              </div>
+              
+              <div class="calculator-field">
+                  <label for="investment-period">Investment period (years)</label>
+                  <input type="number" id="investment-period" min="1" max="50" oninput="calculateStockReturn()" pattern="[0-9]*" inputmode="numeric">
+              </div>
+              
+              <div class="calculator-field">
+                  <label for="monthly-replenishment">Monthly replenishment</label>
+                  <input type="number" id="monthly-replenishment" min="0" oninput="calculateStockReturn()" pattern="[0-9]*" inputmode="decimal">
+              </div>
+          </div>
+          
+          <div class="results-container">
+              <h2 class="results-title">Total amount after <span id="years-result">10</span> years</h2>
+              
+              <div class="result-item">
+                  <div class="result-label">Invested funds</div>
+                  <div class="result-value" id="invested-funds">—</div>
+              </div>
+              
+              <div class="result-item">
+                  <div class="result-label">Earned on stock growth</div>
+                  <div class="result-value" id="earned-growth">—</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </section>
+
+
+   <!-- ГОАЛ -->
+   <section class="page-content" id="goal-tracker-page">
+    <div class="goal-container">
+      <form id="goal-form" class="goal-form">
+        
+        <div class="quote">“Money grows when goals are clear”</div>
+  
+        <label for="goal-name">Goal Name</label>
+        <input type="text" id="goal-name" placeholder="Eg: Macbook Air 2024, gold, 512 GB"/>
+  
+        <label for="goal-deadline">Deadline</label>
+        <input type="text" id="goal-deadline" placeholder="Before my birthday, 25.02.2025"/>
+  
+        <label for="goal-target">Target Amount (tg)</label>
+        <input type="text" id="goal-target" placeholder="720 000"/>
+  
+        <label for="goal-saved">Amount Saved (tg)</label>
+        <input type="text" id="goal-saved" placeholder="375 420"/>
+  
+        <button type="submit" id="goal-done" class="btn-done">Done</button>
+        <div id="motivation" class="motivation"></div>
+        <div id="error-message" class="error-message"></div>
+      </form>
+
+      
+  
+      <div class="palette-wrapper">
+        <button id="add-goal" class="add-goal">＋</button>
+        <div id="color-palette" class="color-palette">
+          <span class="color-dot" data-bg="#088679" data-accent="#04544C"></span>
+          <span class="color-dot" data-bg="#B40E09" data-accent="#790703"></span>
+          <span class="color-dot" data-bg="#AF09B4" data-accent="#69046C"></span>
+          <span class="color-dot" data-bg="#5EB409" data-accent="#376C04"></span>
+          <span class="color-dot" data-bg="#0FC1E4" data-accent="#076C80"></span>
+          <span class="color-dot" data-bg="#000000" data-accent="#061C59"></span>
+        </div>
+      </div>
+
+      <div id="goals-list" class="goals-list"></div>
+
+      
+    </div>
+  </section>
+  
+
+  
+
+  <!-- ABOUT US / FAQ -->
+  <section class="page-content" id="about-us-page">
+   
+    <div id="about-us">
+      <h3 class="faq-title">Frequently Asked Questions (FAQ) for Money Wise</h3>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> What is Money Wise?</button>
+        <div class="faq-answer">
+          Money Wise is a financial education platform that helps you budget, save, and invest wisely.
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> Is Money Wise free to use?</button>
+        <div class="faq-answer">
+          Yes, Money Wise is completely free to use for managing your finances.
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> How can I start using Money Wise?</button>
+        <div class="faq-answer">
+          You can sign up on our website and start using Money Wise right away!
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> Can I withdraw the money I save on Money Wise?</button>
+        <div class="faq-answer">
+          Yes! Once you reach the required amount, you can withdraw it to your bank or digital wallet.
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> How does the rewards system work?</button>
+        <div class="faq-answer">
+          Money Wise offers rewards as you reach savings goals, encouraging you to stay on track.
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> Is my data safe on Money Wise?</button>
+        <div class="faq-answer">
+          Yes, your data is securely encrypted and stored, ensuring your information is safe.
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> Can I track multiple financial goals?</button>
+        <div class="faq-answer">
+          Yes, Money Wise allows you to set and track multiple financial goals at once.
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> How do I contact support?</button>
+        <div class="faq-answer">
+          You can reach support via email or through our contact form on the website.
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> Does Money Wise offer investment advice?</button>
+        <div class="faq-answer">
+          No, Money Wise provides tools and education but does not offer direct investment advice.
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-question"><span class="icon">+</span> Can I collaborate with Money Wise?</button>
+        <div class="faq-answer">
+          Yes, we welcome collaborations with other organizations to spread financial education.
+        </div>
+      </div>
+    </div>
+  </section>
+
+   
+   <!-- ===== Контакты ===== -->
+<section class="page-content" id="contact-page">
+  <div class="contact-form-wrapper">
+    <h2>Have a question? Send us a message!</h2>
+    <input type="text"   id="full-name" placeholder="Full name"/>
+    <input type="email"  id="email"     placeholder="Email"/>
+    <textarea    id="message"  placeholder="Your message"></textarea>
+    <button id="send-btn">Send Message</button>
+    <p id="form-feedback"></p>
+  </div>
+
+  <div class="social-container">
+    <a href="https://instagram.com/moneywise"      target="_blank">
+      <img src="instagram.png" alt="Instagram"/> @moneywise
+    </a>
+    <a href="https://t.me/moneywise_chat"            target="_blank">
+      <img src="telegram.png"  alt="Telegram"/> t.me/moneywise_chat
+    </a>
+    <a href="https://wa.me/7766214366"                target="_blank">
+      <img src="whatsapp.png"  alt="WhatsApp"/> wa.me/7766214366
+    </a>
+    <a href="https://twitter.com/moneywise_finance"   target="_blank">
+      <img src="twitter.png"   alt="Twitter"/> @moneywise_finance
+    </a>
+  </div>
+</section>
+
+  <script src="scriptfinal.js"></script>
+</body>
+</html>
