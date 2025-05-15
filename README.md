@@ -4,11 +4,15 @@ Team |Symbat Kuatbekova | Aruzhan ZholdasbayevaTeam |
 Students of SDU University
 
  Project Goal!( •̀ ω •́ )✧
+
+ 
 MoneyWise is designed to bridge the gap in financial literacy for students and young adults by providing an interactive, user-friendly web platform focused on budgeting, investing, and saving.
 
 Our mission is to empower users with practical knowledge and tools that help them make smarter financial decisions, cultivate good money habits, and track their progress in an engaging and gamified way.
 
 💡 Problem Statement
+
+
 Financial literacy remains a critical yet under-addressed skill for many young people. Despite the abundance of online resources, existing tools often lack interactivity, motivation, and clarity, which hinders users’ learning and application.
 
 Key challenges we aimed to tackle:
@@ -22,6 +26,8 @@ Need for accessible, multi-featured platforms that combine education with practi
 Poor user experience in current financial calculators and quizzes.
 
 🛠 Our Solution╰(*°▽°*)╯
+
+
 MoneyWise combines education, practical calculators, and gamified quizzes in one seamless platform.
 
 ^_^Features
@@ -38,6 +44,7 @@ Goal Tracker: Set, customize, and monitor financial goals with progress visualiz
 User Accounts: Secure login, registration, and email verification for personalized experiences.
 
 Custom API
+
 We developed a custom API that handles budget tracking — powering dynamic content and real-time progress updates.
 
 Website Structure
@@ -82,10 +89,16 @@ Implement analytics dashboard for users to track long-term progress and habits.
 Gamify further with badges, leaderboards, and rewards to enhance user retention.
 
 🙌 Team & Contribution
+
+
 This project was built by a motivated team of students at SDU University — Symbat, Kuatbekova Aruzhan, and Zholdasbayeva — combining their skills in frontend, backend, design, and API development to deliver a fully functional and impactful financial education platform.
 
 Feel free to explore our code, report issues, and contribute! 
 For questions, feedback, or collaboration inquiries, please reach out via: 
+
+
 splantflower@gmail.com 
+
+
 zholdasbaevaaruzhan2@gmail.com  
 ![TeamworkGIF](https://github.com/user-attachments/assets/5926233e-b55f-434e-9edc-a30d1312495a)
