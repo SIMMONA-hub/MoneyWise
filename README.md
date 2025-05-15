@@ -1,9 +1,9 @@
 MoneyWise — Financial Literacy Web Platform
 
-Team Symbat | Kuatbekova Aruzhan | Zholdasbayeva
+Team |Symbat Kuatbekova | Aruzhan ZholdasbayevaTeam | 
 Students of SDU University
 
- Project Goal
+ Project Goal!( •̀ ω •́ )✧
 MoneyWise is designed to bridge the gap in financial literacy for students and young adults by providing an interactive, user-friendly web platform focused on budgeting, investing, and saving.
 
 Our mission is to empower users with practical knowledge and tools that help them make smarter financial decisions, cultivate good money habits, and track their progress in an engaging and gamified way.
@@ -21,10 +21,10 @@ Need for accessible, multi-featured platforms that combine education with practi
 
 Poor user experience in current financial calculators and quizzes.
 
-🛠 Our Solution
+🛠 Our Solution╰(*°▽°*)╯
 MoneyWise combines education, practical calculators, and gamified quizzes in one seamless platform.
 
-Features
+^_^Features
 Budget Calculator: Track income and expenses, categorize essentials vs. non-essentials, and monitor savings goals.
 
 Investor Quiz: Interactive financial literacy quizzes with multiple difficulty levels to test and improve knowledge.
@@ -40,7 +40,7 @@ User Accounts: Secure login, registration, and email verification for personaliz
 Custom API
 We developed a custom API that handles budget tracking — powering dynamic content and real-time progress updates.
 
-📐 Website Structure
+Website Structure
 Home Page: Overview and navigation hub with a welcoming and vibrant UI.
 
 Budget Calculator Pages: Four-step budgeting tool separating income, essential and non-essential expenses, and savings/investments.
@@ -87,4 +87,5 @@ This project was built by a motivated team of students at SDU University — Sym
 Feel free to explore our code, report issues, and contribute! 
 For questions, feedback, or collaboration inquiries, please reach out via: 
 splantflower@gmail.com 
-zholdasbaevaaruzhan2@gmail.com 
+zholdasbaevaaruzhan2@gmail.com  
+![TeamworkGIF](https://github.com/user-attachments/assets/5926233e-b55f-434e-9edc-a30d1312495a)
